@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main(){
-    FILE *file = fopen("text.txt","r");
+int main(int argc, char *argv[]){
+    FILE *file = fopen(argv[1],"r");
     if(file == NULL){
         perror("Error trying to open the file");
         return 1;

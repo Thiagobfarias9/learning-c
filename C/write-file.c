@@ -26,10 +26,13 @@ int main(int argc, char *argv[]){
 
     size_t result = fwrite(argv[2], sizeof(char), strlen(argv[2]), ptr);
     size_t result2 = fwrite(" ", sizeof(char), sizeof(char),ptr);
+    
     if(result > 0 && result2 > 0){
         printf("Text wrote in %s\n", argv[1]);
+        free(ptr);
         return 0;
     }
+    free(ptr);
     printf("Error trying to write in %s", argv[1]);
     return 1;
 }
